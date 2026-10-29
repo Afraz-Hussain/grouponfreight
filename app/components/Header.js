@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -32,12 +33,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <Link
-          href="/"
-          className="text-2xl font-bold text-[#0b2946]"
-        >
-          Groupon<span className="text-orange-500">Freight</span>
-        </Link>
+         <Link href="/" className="inline-flex items-center text-2xl font-bold text-[#0b2946]">
+      <Image 
+        src="/imgs/logo.png" 
+        alt="Groupon Freight Logo" 
+        width={200} 
+        height={80} 
+        priority // Recommended for logos to prevent layout shift
+        className="object-contain"
+      />
+    </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">

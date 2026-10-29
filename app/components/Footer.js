@@ -6,6 +6,7 @@ import {
   ArrowUpRight,
   Truck,
 } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   { name: "All Leads", href: "/leads" },
@@ -40,15 +41,16 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-2xl font-bold text-white"
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500">
-                <Truck size={23} className="text-white" />
-              </span>
-              Groupon<span className="text-orange-500">Freight</span>
-            </Link>
+            <Link href="/" className="inline-flex items-center text-2xl font-bold text-[#0b2946]">
+      <Image
+        src="/imgs/logobg.png" 
+        alt="Groupon Freight Logo" 
+        width={200} 
+        height={80} 
+        priority // Recommended for logos to prevent layout shift
+        className="object-contain"
+      />
+    </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">
               Helping auto transport brokers and vehicle shipping businesses
